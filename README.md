@@ -20,6 +20,22 @@ Last updated: 2025-02-21
 
 </details>
 
+## Workspace 
+
+## Authoring
+
+## Assets
+
+## Manage
+
+| Compute Type         | Description | Purpose | Ideal Use Cases | Key Features |
+|----------------------|-------------|---------|------------------|---------------|
+| **Compute Instances** | Preconfigured VMs (CPU/GPU) with tools like VS Code, JupyterLab, and RStudio. | Interactive development and experimentation. | Data exploration, model prototyping, debugging. | Auto-shutdown, integrated notebooks, preinstalled ML frameworks. |
+| **Compute Clusters**  | Scalable clusters that auto-scale based on workload. Supports both CPU and GPU nodes. | Distributed training and batch inference. | Training large models, running parallel experiments. | Autoscaling, cost control, reusable across users. |
+| **Kubernetes Clusters** | Includes AKS and attached Kubernetes clusters for production-grade deployments. | Real-time inference and scalable deployment. | Hosting REST endpoints, high-availability inference. | Load balancing, autoscaling, secure networking. |
+| **Attached Compute** | External compute resources manually connected to Azure ML. | Leverage existing infrastructure. | Using Azure VMs, Databricks, or on-prem compute. | Flexibility, hybrid cloud support, reuse of existing resources. |
+| **Serverless Instances** | Lightweight, on-demand compute (e.g., Azure Container Instances). | Quick testing and low-scale inference. | Temporary model deployment, dev/test environments. | No infrastructure management, fast startup, cost-effective. |
+
 
 <div align="center">
   <img src="" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>

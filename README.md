@@ -37,7 +37,7 @@ Last updated: 2025-04-29
   
 https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 
-| Feature / Platform       | Azure Machine Learning                                  | Microsoft Fabric                                         | Azure AI Foundry                                         |
+| Feature / Platform       | Azure Machine Learning                                  | [Microsoft Fabric](./msFabric-AI_integration)                                         | Azure AI Foundry                                         |
 |--------------------------|----------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|
 | **Purpose**              | End-to-end ML lifecycle management and MLOps             | Unified data analytics and business intelligence platform | Unified platform for building and deploying AI solutions  |
 | **Model Deployment**     | Supports real-time and batch deployment via AKS, ACI     | Limited ML deployment; integrates with Azure ML           | Deploys models as APIs or services within projects        |

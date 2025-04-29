@@ -1,0 +1,5 @@
+resource_group_name = "ml-platform-rg"
+location            = "eastus2"
+workspace_name      = "ml-workspace"
+compute_name        = "ml-compute-cluster"
+subscription_id     = "your-subscription_id"

@@ -34,6 +34,7 @@ Last updated: 2025-04-29
 > Topics:
 
 - [Demostration: How to integrate AI in Microsoft Fabric](./msFabric-AI_integration/)
+- [Demonstration: Deploying Azure Resources for a Data Platform (Microsoft Fabric)](./infrastructure/msFabric/)
   
 https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 

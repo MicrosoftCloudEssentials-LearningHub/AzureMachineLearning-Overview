@@ -69,10 +69,11 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 
 https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d
 
+## Step 4: Create a New Notebook or Script
 
-### **4. Create a New Notebook or Script**
 - Use the compute instance to open a **Jupyter notebook** or create a Python script.
 - Import necessary libraries:
+
   ```python
   import pandas as pd
   from sklearn.model_selection import train_test_split
@@ -80,19 +81,32 @@ https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d
   from sklearn.metrics import accuracy_score
   ```
 
----
+  https://github.com/user-attachments/assets/16650584-11cb-48fb-928d-c032e519c14b
 
-### **5. Load and Explore the Data**
+## Step 5: Load and Explore the Data
+
 - Load the dataset and perform basic EDA (exploratory data analysis):
+
   ```python
-  data = pd.read_csv('your_dataset.csv')
-  print(data.head())
+  import mltable
+  from azure.ai.ml import MLClient
+  from azure.identity import DefaultAzureCredential
+  
+  ml_client = MLClient.from_config(credential=DefaultAzureCredential())
+  data_asset = ml_client.data.get("employee_data", version="1")
+  
+  tbl = mltable.load(f'azureml:/{data_asset.id}')
+  
+  df = tbl.to_pandas_dataframe()
+  df
   ```
 
----
+  https://github.com/user-attachments/assets/5fa65d95-8502-4ab7-ba0d-dfda66378cc2
 
-### **6. Train Your Model**
+## Step 6: Train Your Model
+
 - Split the data and train a model:
+
   ```python
   X = data.drop('target', axis=1)
   y = data['target']

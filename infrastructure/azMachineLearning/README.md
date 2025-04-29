@@ -111,10 +111,15 @@ graph TD;
     az login
     ```
 
+   https://github.com/user-attachments/assets/aad4e0e6-46bb-457d-a768-0eedf6a9d2ba
+
+
 2. **Initialize Terraform**: Set up your working directory and install the necessary provider plugins.
     ```sh
     terraform init
     ```
+
+   https://github.com/user-attachments/assets/e56ed69c-7a82-48fd-ba72-bbd9f862175d
 
 3. **Review the Deployment Plan**: Preview the changes Terraform will make.
     ```sh

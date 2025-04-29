@@ -58,7 +58,7 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 2. Choose:
    - **Name**: `employee_data`
    - **Type**: Tabular
-   - **Browse** and upload the `sample_data.csv` file.
+   - **Browse** and upload the [sample_data.csv](./azML-modelcreation/data/sample_data.csv) file.
 3. Click **Next**, then **Review + Create**.
 
 > Register the Dataset: 
@@ -67,8 +67,8 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 2. Confirm the schema (column names and types).
 3. Click **Create** to register the dataset.
 
+https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d
 
----
 
 ### **4. Create a New Notebook or Script**
 - Use the compute instance to open a **Jupyter notebook** or create a Python script.

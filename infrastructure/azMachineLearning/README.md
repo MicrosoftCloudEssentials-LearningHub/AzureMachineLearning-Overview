@@ -129,9 +129,12 @@ graph TD;
     https://github.com/user-attachments/assets/bf2faa70-7ee4-4722-9e21-024873a75ac7
 
 4. **Apply the Configuration**: Deploy the specified Azure resources.
+
     ```sh
     terraform apply -var-file terraform.tfvars
     ```
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/5b1a08db-0a2e-46d9-832a-f2b2d0c9ccbd" />
 
 5. **Destroy the Infrastructure (if needed)**: Clean up resources by tearing down the deployment.
     ```sh

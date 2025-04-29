@@ -9,6 +9,7 @@ Last updated: 2025-04-29
 
 ------------------------------------------
 
+> Azure Machine Learning (PaaS) is a cloud-based platform from Microsoft designed to help `data scientists and machine learning engineers build, train, deploy, and manage machine learning models at scale`. It supports the `entire machine learning lifecycle, from data preparation and experimentation to deployment and monitoring.` It provides powerful tools for `both code-first and low-code users`, including Jupyter notebooks, drag-and-drop interfaces, and automated machine learning (AutoML). `Azure ML integrates seamlessly with other Azure services and supports popular frameworks like TensorFlow, PyTorch, and Scikit-learn.`
 
 <details>
 <summary><b>List of References </b> (Click to expand)</summary>
@@ -30,8 +31,10 @@ Last updated: 2025-04-29
 
 </details>
 
-> Azure Machine Learning (PaaS) is a cloud-based platform from Microsoft designed to help `data scientists and machine learning engineers build, train, deploy, and manage machine learning models at scale`. It supports the `entire machine learning lifecycle, from data preparation and experimentation to deployment and monitoring.` It provides powerful tools for `both code-first and low-code users`, including Jupyter notebooks, drag-and-drop interfaces, and automated machine learning (AutoML). `Azure ML integrates seamlessly with other Azure services and supports popular frameworks like TensorFlow, PyTorch, and Scikit-learn.`
+> Topics:
 
+- [Demostration: How to integrate AI in Microsoft Fabric](./msFabric-AI_integration/)
+  
 https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 
 | Feature / Platform       | Azure Machine Learning                                  | Microsoft Fabric                                         | Azure AI Foundry                                         |

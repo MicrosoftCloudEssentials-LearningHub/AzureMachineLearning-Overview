@@ -66,6 +66,35 @@ Read more about [Endpoints for inference in production](https://learn.microsoft.
 
 ## Authoring
 
+<details>
+  <summary>Notebooks</summary>
+
+  > Azure ML provides integrated Jupyter notebooks that run on managed compute instances (CPU or GPU). These notebooks support Python and R, and come pre-installed with popular ML libraries like TensorFlow, PyTorch, Scikit-learn, and pandas. Users can access data from registered datasets, run experiments, and track metrics directly from the notebook using the Azure ML SDK. Notebooks can also be version-controlled and scheduled as part of pipelines.
+
+</details>
+
+<details>
+  <summary>Automated ML</summary>
+
+  > Automated ML (AutoML) enables users to train models for classification, regression, and time-series forecasting without writing code. It performs algorithm selection, hyperparameter tuning, and model ensembling. Users can configure training constraints such as timeouts, primary metrics, and validation strategies. AutoML runs are tracked as experiments, and the best model can be registered and deployed directly from the UI or SDK.
+
+</details>
+
+<details>
+  <summary>Designer</summary>
+
+  > The Designer is a visual interface for building machine learning pipelines using a drag-and-drop canvas. It supports data ingestion, transformation, model training, evaluation, and deployment. Each component in the pipeline is backed by a module (e.g., data split, normalization, logistic regression). Pipelines can be published as REST endpoints and reused in production workflows. Designer supports both built-in modules and custom Python scripts.
+
+</details>
+
+<details>
+  <summary>Prompt Flow</summary>
+
+  > Prompt Flow is a development tool for building and managing prompt-based workflows for large language models (LLMs). It allows chaining of prompts, tools (e.g., Python functions, APIs), and control logic into structured flows. Developers can test, evaluate, and deploy these flows as endpoints. Prompt Flow supports integration with Azure OpenAI, LangChain, and Semantic Kernel, and includes telemetry for prompt performance and cost tracking.
+
+</details>
+
+
 ## Assets
 
 ## Manage

@@ -85,7 +85,7 @@ https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d
 
 ## Step 5: Load and Explore the Data
 
-- Load the dataset and perform basic EDA (exploratory data analysis):
+> Load the dataset and perform basic EDA (exploratory data analysis):
 
   ```python
   import mltable
@@ -105,38 +105,122 @@ https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d
 
 ## Step 6: Train Your Model
 
-- Split the data and train a model:
+> Split the data and train a model:
 
   ```python
-  X = data.drop('target', axis=1)
-  y = data['target']
-  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-
-  model = RandomForestClassifier()
+  # Step 1: Preprocessing
+  from sklearn.preprocessing import LabelEncoder, StandardScaler
+  
+  # Encode categorical columns
+  label_encoder = LabelEncoder()
+  df['Department'] = label_encoder.fit_transform(df['Department'])
+  
+  # Drop non-informative or high-cardinality columns
+  if 'Name' in df.columns:
+      df = df.drop(columns=['Name'])  # 'Name' is likely not predictive
+  
+  # Optional: Check for missing values
+  if df.isnull().sum().any():
+      df = df.dropna()  # or use df.fillna(method='ffill') for imputation
+  
+  # Step 2: Define Features and Target
+  X = df.drop('Salary', axis=1)  # Features: Age and Department
+  y = df['Salary']               # Target: Salary
+  
+  # Optional: Feature Scaling (especially useful for models sensitive to scale)
+  scaler = StandardScaler()
+  X_scaled = scaler.fit_transform(X)
+  
+  # Step 3: Split the Data
+  from sklearn.model_selection import train_test_split
+  
+  X_train, X_test, y_train, y_test = train_test_split(
+      X_scaled, y, test_size=0.2, random_state=42
+  )
+  
+  # Step 4: Train a Regression Model
+  from sklearn.ensemble import RandomForestRegressor
+  
+  model = RandomForestRegressor(
+      n_estimators=100,
+      max_depth=None,
+      random_state=42,
+      n_jobs=-1  # Use all available cores
+  )
   model.fit(X_train, y_train)
   ```
 
----
+  https://github.com/user-attachments/assets/2176c795-5fda-4746-93c7-8b137b526a09
 
-### **7. Evaluate the Model**
-- Check performance:
+## Step 7: Evaluate the Model
+
+> Check performance:
+
   ```python
+  # Step 5: Make Predictions
   predictions = model.predict(X_test)
-  print("Accuracy:", accuracy_score(y_test, predictions))
+  
+  # Step 6: Evaluate the Model
+  from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+  import numpy as np
+  
+  mae = mean_absolute_error(y_test, predictions)
+  mse = mean_squared_error(y_test, predictions)
+  rmse = np.sqrt(mse)
+  r2 = r2_score(y_test, predictions)
+  
+  print("Model Evaluation Metrics")
+  print(f"Mean Absolute Error (MAE): {mae:.2f}")
+  print(f"Mean Squared Error (MSE): {mse:.2f}")
+  print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
+  print(f"R² Score: {r2:.2f}")
   ```
 
----
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/6aa19680-cadb-4fe4-a419-a626942e15f9" />
 
-### **8. Register the Model**
-- Save and register the model in Azure ML:
+> Distribution of prediction errors:
+
+```python
+import matplotlib.pyplot as plt
+
+# Plot 1: Distribution of prediction errors
+errors = y_test - predictions
+plt.figure(figsize=(10, 6))
+plt.hist(errors, bins=30, color='skyblue', edgecolor='black')
+plt.title('Distribution of Prediction Errors')
+plt.xlabel('Prediction Error')
+plt.ylabel('Frequency')
+plt.grid(True)
+plt.show()
+
+# Plot 2: Predicted vs Actual values
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, predictions, alpha=0.3, color='darkorange')
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=2)
+plt.title('Predicted vs Actual Salary')
+plt.xlabel('Actual Salary')
+plt.ylabel('Predicted Salary')
+plt.grid(True)
+plt.show()
+```
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/d8ec1f2c-eb97-4106-9cee-809849d02796">
+
+## Step 8: Register the Model
+
+> Save and register the model in Azure ML:
+
   ```python
   import joblib
   joblib.dump(model, 'model.pkl')
-
+  
   from azureml.core import Workspace, Model
   ws = Workspace.from_config()
-  Model.register(workspace=ws, model_path="model.pkl", model_name="my_model")
+  Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")
   ```
+> [!TIP]
+> Click [here]() to read the script used.
+
 
 ---
 

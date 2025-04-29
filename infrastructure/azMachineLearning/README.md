@@ -9,7 +9,7 @@ Last updated: 2025-04-29
 
 ------------------------------------------
 
-> This repository contains Terraform configurations for setting up an Azure Machine Learning workspace along with compute clusters and supportive resources to form the core of an ML platform.  
+> Terraform configurations for setting up an Azure Machine Learning workspace along with compute clusters and supportive resources to form the core of an ML platform.  
 > `Remember, managing your infrastructure through code (IaC) not only ensures consistency, but also offers version control, reproducibility, and collaboration benefits—essential for scalable ML operations.`
 > For additional Terraform templates covering various Azure services, check out [this repository](https://github.com/MicrosoftCloudEssentials-LearningHub/AzureTerraformTemplates-v0.0.0). Explore and borrow ideas as needed!
 

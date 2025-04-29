@@ -17,7 +17,7 @@ Last updated: 2025-04-29
 > **About Infrastructure via Terraform**: Terraform is a powerful IaC tool that enables you to define and provision your cloud resources through a high-level configuration language. This approach keeps not only your application objects under source control but also the infrastructure code, ensuring reproducible environments across development, testing, and production. Microsoft also offers additional IaC tools like Bicep and ARM templates, giving you flexibility in how you manage your Azure resources.
 
 <p align="center">
-    <img width="550" alt="Azure Machine Learning architecture" src="https://github.com/user-attachments/assets/your-aml-architecture-placeholder">
+    <img width="550" alt="Azure Machine Learning architecture" src="https://github.com/user-attachments/assets/8933eb5c-7cc9-4d06-978c-64cb755a48ee">
 </p>
 
 <details>

@@ -218,6 +218,10 @@ plt.show()
   ws = Workspace.from_config()
   Model.register(workspace=ws, model_path="model.pkl", model_name="my_model_RegressionModel")
   ```
+
+https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b
+
+
 > [!TIP]
 > Click [here]() to read the script used.
 

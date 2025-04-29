@@ -81,10 +81,12 @@ https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d
   from sklearn.metrics import accuracy_score
   ```
 
----
+  https://github.com/user-attachments/assets/16650584-11cb-48fb-928d-c032e519c14b
 
-### **5. Load and Explore the Data**
+## Step 5: Load and Explore the Data
+
 - Load the dataset and perform basic EDA (exploratory data analysis):
+
   ```python
   data = pd.read_csv('your_dataset.csv')
   print(data.head())

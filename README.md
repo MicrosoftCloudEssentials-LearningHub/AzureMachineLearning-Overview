@@ -38,7 +38,7 @@ Last updated: 2025-04-29
 
 </details>
 
-https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
+<img src="https://github.com/user-attachments/assets/dcfd2631-ed20-473c-8174-eb88387f76b8" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
 
 | Feature / Platform       | Azure Machine Learning                                  | [Microsoft Fabric](./msFabric-AI_integration)                                         | Azure AI Foundry                                         |
 |--------------------------|----------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|

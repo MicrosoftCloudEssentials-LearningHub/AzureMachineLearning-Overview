@@ -69,10 +69,11 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 
 https://github.com/user-attachments/assets/f8cbd32c-94fc-43d3-a7a8-00f63cdc543d
 
+## Step 4: Create a New Notebook or Script
 
-### **4. Create a New Notebook or Script**
 - Use the compute instance to open a **Jupyter notebook** or create a Python script.
 - Import necessary libraries:
+
   ```python
   import pandas as pd
   from sklearn.model_selection import train_test_split

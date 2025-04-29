@@ -15,6 +15,7 @@ Last updated: 2025-04-29
 - Terraform [Demonstration: Deploying Azure Resources for a Data Platform (Microsoft Fabric)](./infrastructure/msFabric/)
 - Terraform [Demonstration: Deploying Azure Resources for an ML Platform](./infrastructure/azMachineLearning/)
 - [Demostration: How to integrate AI in Microsoft Fabric](./msFabric-AI_integration/)
+- [Demostration: Creating a Machine Learning Model](./azML-modelcreation/)
 
 > Azure Machine Learning (PaaS) is a cloud-based platform from Microsoft designed to help `data scientists and machine learning engineers build, train, deploy, and manage machine learning models at scale`. It supports the `entire machine learning lifecycle, from data preparation and experimentation to deployment and monitoring.` It provides powerful tools for `both code-first and low-code users`, including Jupyter notebooks, drag-and-drop interfaces, and automated machine learning (AutoML). `Azure ML integrates seamlessly with other Azure services and supports popular frameworks like TensorFlow, PyTorch, and Scikit-learn.`
 
@@ -227,18 +228,6 @@ Read more about [Endpoints for inference in production](https://learn.microsoft.
 | **Kubernetes Clusters** | Includes AKS and attached Kubernetes clusters for production-grade deployments. | Real-time inference and scalable deployment. | Hosting REST endpoints, high-availability inference. | Load balancing, autoscaling, secure networking. |
 | **Attached Compute** | External compute resources manually connected to Azure ML. | Leverage existing infrastructure. | Using Azure VMs, Databricks, or on-prem compute. | Flexibility, hybrid cloud support, reuse of existing resources. |
 | **Serverless Instances** | Lightweight, on-demand compute (e.g., Azure Container Instances). | Quick testing and low-scale inference. | Temporary model deployment, dev/test environments. | No infrastructure management, fast startup, cost-effective. |
-
-> How to create a Compute Instance: 
- 
-1. **Go to Azure Machine Learning Studio**: Navigate to [ml.azure.com](https://ml.azure.com/) and select your workspace.
-2. **Select `Compute` from the left menu**  Choose the **`Compute instances`** tab.
-3. **Click `New`**  
-   - Enter a name for your compute instance.
-   - Choose a virtual machine size (e.g., `Standard_DS3_v2`).
-   - Optionally, enable SSH access or assign a user.
-4. **Click `Create`**: Azure will provision the compute instance, which may take a few minutes.
-
-    https://github.com/user-attachments/assets/bd5f3ce6-7082-4741-8827-8b344cd249a4
 
 </details>
 

@@ -126,6 +126,8 @@ graph TD;
     terraform plan -var-file terraform.tfvars
     ```
 
+    https://github.com/user-attachments/assets/bf2faa70-7ee4-4722-9e21-024873a75ac7
+
 4. **Apply the Configuration**: Deploy the specified Azure resources.
     ```sh
     terraform apply -var-file terraform.tfvars

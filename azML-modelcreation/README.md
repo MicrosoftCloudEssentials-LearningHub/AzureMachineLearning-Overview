@@ -9,6 +9,7 @@ Last updated: 2025-04-29
 
 ------------------------------------------
 
+
 <details>
 <summary><b>List of References </b> (Click to expand)</summary>
 
@@ -18,8 +19,6 @@ Last updated: 2025-04-29
 <summary><b>Table of Content </b> (Click to expand)</summary>
 
 </details>
-
-> Azure ML is a cloud-based platform that provides tools for building, training, and deploying ML models at scale.
 
 ## Step 1: Set Up Your Azure ML Workspace
 
@@ -36,16 +35,38 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 
 > Or using terraform configurations for setting up an Azure Machine Learning workspace along with compute clusters and supportive resources to form the core of an ML platform, click here to see [Demonstration: Deploying Azure Resources for an ML Platform](./infrastructure/azMachineLearning/README.md)
 
-### **2. Create a Compute Instance**
-- In Azure ML Studio, go to **Compute > Compute Instances**.
-- Create a new instance (choose CPU or GPU depending on your needs).
-- This will be your development environment (like a cloud-based Jupyter notebook).
+## Step 2: Create a Compute Instance
 
----
+1. **Go to [Azure Machine Learning Studio](https://ml.azure.com/)** and select your workspace.
+2. **Select `Compute` from the left menu**  Choose the **`Compute instances`** tab.
+3. **Click `New`**  
+   - Enter a name for your compute instance.
+   - Choose a virtual machine size (e.g., `Standard_DS3_v2`).
+   - Optionally, enable SSH access or assign a user.
+4. **Click `Create`**: Azure will provision the compute instance, which may take a few minutes.
 
-### **3. Prepare Your Data**
-- Upload your dataset to **Azure ML datastore** or connect to external sources (e.g., Azure Blob Storage, SQL, etc.).
+    https://github.com/user-attachments/assets/bd5f3ce6-7082-4741-8827-8b344cd249a4
+
+## Step 3: Prepare Your Data
+
+- Upload your dataset to **Azure ML datastore** or connect to exrnal sources (e.g., Azure Blob Storage, SQL, etc.).
 - Use **Data > Datasets** to register and version your dataset.
+
+> For example: Upload the CSV to Azure ML
+
+1. Under to **Data > + Create > From local files**.
+2. Choose:
+   - **Name**: `employee_data`
+   - **Type**: Tabular
+   - **Browse** and upload the `sample_data.csv` file.
+3. Click **Next**, then **Review + Create**.
+
+> Register the Dataset: 
+
+1. After upload, Azure will preview the data.
+2. Confirm the schema (column names and types).
+3. Click **Create** to register the dataset.
+
 
 ---
 

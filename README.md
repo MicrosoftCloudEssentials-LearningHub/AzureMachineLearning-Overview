@@ -96,11 +96,14 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 
 ## Assets
 
-> The following diagram illustrates how you can use a single Environment object in both your run configuration (for training) and your inference and deployment configuration (for web service deployments).
+> The following diagram illustrates how you can use a single Environment object in both your run configuration (for training) and your inference and deployment configuration (for web service deployments). <br/>
+> Image from [What are Azure Machine Learning environments?](https://learn.microsoft.com/en-us/azure/machine-learning/concept-environments?view=azureml-api-2)
+
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/2bc9ccd7-ebe9-478e-ad7d-e10eee0d1892" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
 </div>
+
 
 <details>
   <summary><strong>Data</strong></summary>

@@ -23,6 +23,11 @@ Last updated: 2025-04-29
 <details>
 <summary><b>Table of Content </b> (Click to expand)</summary>
 
+- [Workspace](#workspace)
+- [Authoring](#authoring)
+- [Assets](#assets)
+- [Manage](#manage)
+
 </details>
 
 > Azure Machine Learning (PaaS) is a cloud-based platform from Microsoft designed to help `data scientists and machine learning engineers build, train, deploy, and manage machine learning models at scale`. It supports the `entire machine learning lifecycle, from data preparation and experimentation to deployment and monitoring.` It provides powerful tools for `both code-first and low-code users`, including Jupyter notebooks, drag-and-drop interfaces, and automated machine learning (AutoML). `Azure ML integrates seamlessly with other Azure services and supports popular frameworks like TensorFlow, PyTorch, and Scikit-learn.`
@@ -58,11 +63,6 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
   <img src="https://github.com/user-attachments/assets/f3a987a8-ec59-42de-9e56-29c41c8e55a9" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
 </div>
 
-Read more about [Endpoints for inference in production](https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints?view=azureml-api-2)
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/aa5a0671-e9b8-4ae1-bd69-5098218b63d5" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 ## Authoring
 
@@ -94,10 +94,123 @@ Read more about [Endpoints for inference in production](https://learn.microsoft.
 
 </details>
 
-
 ## Assets
 
+> The following diagram illustrates how you can use a single Environment object in both your run configuration (for training) and your inference and deployment configuration (for web service deployments).
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2bc9ccd7-ebe9-478e-ad7d-e10eee0d1892" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
+
+<details>
+  <summary><strong>Data</strong></summary>
+
+  > **Datasets** are foundational assets in machine learning workflows. In Azure Machine Learning, registered datasets are used across experiments, pipelines, and jobs to ensure consistency and reproducibility. These datasets can be versioned and stored in Azure Blob Storage or other supported data sources. Azure ML supports various data formats, including tabular data (e.g., CSV, Parquet), file-based data (e.g., images, text files), and URI-based references. By registering datasets, teams can track data lineage, manage access, and ensure that models are trained and evaluated on consistent data versions.
+
+  1. Prepare your data in a supported format (e.g., CSV, JSON, images).
+  2. Upload the data to Azure Blob Storage or another supported location.
+  3. Register the dataset using the Azure ML SDK, CLI, or Studio.
+  4. Version the dataset to track changes over time.
+  5. Use the dataset in jobs, pipelines, or experiments to ensure reproducibility.
+
+</details>
+
+<details>
+  <summary><strong>Jobs</strong></summary>
+
+  > **Jobs** represent individual executions of scripts, components, or pipelines in Azure ML. Each job captures inputs, outputs, logs, metrics, and environment details. Jobs can be triggered manually, on a schedule, or as part of a pipeline. They provide full traceability and monitoring for ML experiments and production workflows.
+
+  1. Define your script or component (e.g., training or evaluation logic).
+  2. Specify inputs (datasets, parameters) and expected outputs.
+  3. Configure the environment (Docker image, Conda dependencies).
+  4. Submit the job using the Azure ML SDK, CLI, or Studio interface.
+  5. Monitor the job’s progress, view logs, and analyze metrics.
+
+</details>
+
+<details>
+  <summary><strong>Components</strong></summary>
+
+  > **Components** are modular, reusable units of computation in Azure ML. They encapsulate specific tasks such as data preprocessing, model training, or evaluation. Defined using YAML, components support versioning and parameterization, and are the core building blocks of pipelines.
+
+  1. Write a script that performs a specific task (e.g., `train.py`).
+  2. Create a YAML file defining the component (inputs, outputs, environment).
+  3. Register the component in Azure ML.
+  4. Use the component in pipelines or jobs.
+  5. Version the component to enable reuse and traceability.
+
+</details>
+
+<details>
+  <summary><strong>Pipelines</strong></summary>
+
+  > **Pipelines** orchestrate multiple components into a complete machine learning workflow. They support parallelism, conditional logic, and reuse. Pipelines can be triggered via REST API, CLI, or SDK, and are ideal for automating ML workflows from data ingestion to deployment.
+
+  1. Define components for each stage (e.g., preprocessing, training, evaluation).
+  2. Chain components together using the Azure ML SDK.
+  3. Specify data flow and dependencies between components.
+  4. Submit the pipeline as a job.
+  5. Monitor execution and reuse pipelines for automation and CI/CD.
+
+</details>
+
+<details>
+  <summary><strong>Environments</strong></summary>
+
+  > **Environments** define the runtime configuration for jobs and components. They include Docker base images, Conda dependencies, and environment variables. Environments ensure consistency across development, training, and production stages.
+
+  1. Create a Conda YAML file or specify a Docker image.
+  2. Register the environment in Azure ML.
+  3. Attach the environment to jobs or components.
+  4. Version environments to maintain reproducibility.
+  5. Use consistent environments across all stages of the ML lifecycle.
+
+</details>
+
+<details>
+  <summary><strong>Models</strong></summary>
+
+  > **Models** are trained artifacts stored in the Azure ML workspace. They can be versioned, registered, and deployed to endpoints. Each model includes metadata, lineage, and evaluation metrics, supporting traceability and governance.
+
+  1. Train a model using a job or pipeline.
+  2. Register the model in the Azure ML workspace.
+  3. Attach metadata such as metrics, tags, and lineage.
+  4. Version the model to track improvements.
+  5. Deploy the model to an endpoint for inference.
+
+</details>
+
+<details>
+  <summary><strong>Endpoints</strong></summary>
+
+  > **Endpoints** expose deployed models as REST APIs for real-time (online) or batch inference. They support authentication, virtual network (VNet) integration, and traffic splitting for A/B testing or gradual rollouts.
+
+  1. Choose a deployment target (real-time or batch).
+  2. Create an inference configuration (entry script, environment).
+  3. Deploy the model to an endpoint.
+  4. Secure the endpoint with authentication and networking rules.
+  5. Monitor and scale the endpoint as needed.
+
+</details>
+
+Read more about [Endpoints for inference in production](https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints?view=azureml-api-2)
+
+<img src="https://github.com/user-attachments/assets/aa5a0671-e9b8-4ae1-bd69-5098218b63d5" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+
+
 ## Manage
+
+
+<details>
+  <summary><strong>Compute</strong></summary>
+
+  > **Compute** resources are the backbone of Azure Machine Learning workloads. This section allows you to create, manage, and monitor compute instances and clusters used for development, training, and inference. It supports various compute types including personal VMs, scalable clusters, and attached external resources.
+
+1. Navigate to **Manage > Compute** in Azure ML Studio.
+2. Choose the type of compute: Instance (for development), Cluster (for training), or Inference Cluster (for deployment).
+3. Configure the compute settings (VM size, scaling, idle shutdown).
+4. Attach external compute if needed (e.g., Azure Databricks, AKS).
+5. Monitor usage, status, and logs from the same interface.
 
 | Compute Type         | Description | Purpose | Ideal Use Cases | Key Features |
 |----------------------|-------------|---------|------------------|---------------|
@@ -106,6 +219,62 @@ Read more about [Endpoints for inference in production](https://learn.microsoft.
 | **Kubernetes Clusters** | Includes AKS and attached Kubernetes clusters for production-grade deployments. | Real-time inference and scalable deployment. | Hosting REST endpoints, high-availability inference. | Load balancing, autoscaling, secure networking. |
 | **Attached Compute** | External compute resources manually connected to Azure ML. | Leverage existing infrastructure. | Using Azure VMs, Databricks, or on-prem compute. | Flexibility, hybrid cloud support, reuse of existing resources. |
 | **Serverless Instances** | Lightweight, on-demand compute (e.g., Azure Container Instances). | Quick testing and low-scale inference. | Temporary model deployment, dev/test environments. | No infrastructure management, fast startup, cost-effective. |
+
+
+</details>
+
+<details>
+  <summary><strong>Monitoring</strong></summary>
+
+  > **Monitoring** provides visibility into the performance and health of your ML assets. It includes logs, metrics, and telemetry for jobs, pipelines, and deployed endpoints. This helps ensure reliability, detect anomalies, and maintain model quality over time.
+
+  1. Go to **Manage > Monitoring**.
+  2. Select the asset you want to monitor (e.g., job, endpoint).
+  3. View logs, metrics, and telemetry data.
+  4. Set up alerts for failures or performance thresholds.
+  5. Use insights to debug issues or optimize performance.
+
+</details>
+
+<details>
+  <summary><strong>Data Labeling</strong></summary>
+
+  > **Data Labeling** enables you to create and manage labeling projects for supervised learning. It supports image, text, and tabular data, and allows collaboration with human labelers or integration with labeling services.
+
+  1. Open **Manage > Data Labeling**.
+  2. Create a new labeling project and select the data type.
+  3. Upload or link the dataset to be labeled.
+  4. Assign labeling tasks to users or services.
+  5. Export the labeled dataset for training or evaluation.
+
+</details>
+
+<details>
+  <summary><strong>Linked Services (Preview)</strong></summary>
+
+  > **Linked Services** allow you to connect your Azure ML workspace to external data sources like Azure Data Lake, Blob Storage, or SQL databases. This simplifies data access and centralizes configuration for use in datasets and pipelines.
+
+  1. Navigate to **Manage > Linked Services**.
+  2. Add a new linked service by selecting the data source type.
+  3. Provide connection details and authentication credentials.
+  4. Test the connection to ensure access.
+  5. Use the linked service in datasets or pipeline steps.
+
+</details>
+
+<details>
+  <summary><strong>Connections (Preview)</strong></summary>
+
+  > **Connections** manage secure access to external systems and APIs. They store credentials and authentication methods, enabling secure and reusable access in jobs and pipelines.
+
+  1. Go to **Manage > Connections**.
+  2. Create a new connection (e.g., to a REST API or database).
+  3. Define the authentication method (e.g., service principal, managed identity).
+  4. Save and test the connection.
+  5. Reference the connection in your components or pipelines.
+
+</details>
+
 
 
 

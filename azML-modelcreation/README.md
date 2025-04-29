@@ -223,13 +223,12 @@ https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b
 
 
 > [!TIP]
-> Click [here]() to read the script used.
+> Click [here](./src/0_ml-model-creation.ipynb) to read the script used.
 
+## Step 9: Deploy the Model
 
----
+> Create an **inference configuration** and deploy to a web service:
 
-### **9. Deploy the Model**
-- Create an **inference configuration** and deploy to a web service:
   ```python
   from azureml.core.environment import Environment
   from azureml.core.model import InferenceConfig

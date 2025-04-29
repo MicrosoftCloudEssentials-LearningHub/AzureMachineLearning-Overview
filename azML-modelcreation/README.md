@@ -13,10 +13,25 @@ Last updated: 2025-04-29
 <details>
 <summary><b>List of References </b> (Click to expand)</summary>
 
+- [AutoML Regression](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference-v2/regression?view=azureml-api-2)
+- [Evaluate automated machine learning experiment results](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml?view=azureml-api-2)
+- [Evaluate Model component](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/evaluate-model?view=azureml-api-2)
+
 </details>
 
 <details>
 <summary><b>Table of Content </b> (Click to expand)</summary>
+
+- [Step 1: Set Up Your Azure ML Workspace](#step-1-set-up-your-azure-ml-workspace)
+- [Step 2: Create a Compute Instance](#step-2-create-a-compute-instance)
+- [Step 3: Prepare Your Data](#step-3-prepare-your-data)
+- [Step 4: Create a New Notebook or Script](#step-4-create-a-new-notebook-or-script)
+- [Step 5: Load and Explore the Data](#step-5-load-and-explore-the-data)
+- [Step 6: Train Your Model](#step-6-train-your-model)
+- [Step 7: Evaluate the Model](#step-7-evaluate-the-model)
+- [Step 8: Register the Model](#step-8-register-the-model)
+- [Step 9: Deploy the Model](#step-9-deploy-the-model)
+- [Step 10: Test the Endpoint](#step-10-test-the-endpoint)
 
 </details>
 
@@ -227,29 +242,81 @@ https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b
 
 ## Step 9: Deploy the Model
 
+> Create the Scoring Script:
+
+```python
+import joblib
+import numpy as np
+from azureml.core.model import Model
+
+def init():
+    global model
+    model_path = Model.get_model_path("my_model_RegressionModel")
+    model = joblib.load(model_path)
+
+def run(data):
+    try:
+        input_data = np.array(data["data"])
+        result = model.predict(input_data)
+        return result.tolist()
+    except Exception as e:
+        return str(e)
+```
+
+https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813
+
+> Create the Environment File (env.yml):
+
+https://github.com/user-attachments/assets/8e7c37a2-e32b-4630-8516-f95926c374c0
+
+> Create a new notebook:
+
+https://github.com/user-attachments/assets/1b3e5602-dc64-4c39-be72-ed1cbd74361e
+
 > Create an **inference configuration** and deploy to a web service:
 
   ```python
+  from azureml.core import Workspace
   from azureml.core.environment import Environment
-  from azureml.core.model import InferenceConfig
+  from azureml.core.model import InferenceConfig, Model
   from azureml.core.webservice import AciWebservice
-
-  env = Environment.from_conda_specification(name="myenv", file_path="env.yml")
+  
+  # Load the workspace
+  ws = Workspace.from_config()
+  
+  # Get the registered model
+  registered_model = Model(ws, name="my_model_RegressionModel")
+  
+  # Create environment from requirements.txt (no conda)
+  env = Environment.from_pip_requirements(
+      name="regression-env",
+      file_path="requirements.txt"  # Make sure this file exists in your working directory
+  )
+  
+  # Define inference configuration
   inference_config = InferenceConfig(entry_script="score.py", environment=env)
-
+  
+  # Define deployment configuration
   deployment_config = AciWebservice.deploy_configuration(cpu_cores=1, memory_gb=1)
-  service = Model.deploy(workspace=ws,
-                         name="my-service",
-                         models=[model],
-                         inference_config=inference_config,
-                         deployment_config=deployment_config)
+  
+  # Deploy the model
+  service = Model.deploy(
+      workspace=ws,
+      name="regression-model-service",
+      models=[registered_model],
+      inference_config=inference_config,
+      deployment_config=deployment_config
+  )
+  
   service.wait_for_deployment(show_output=True)
+  print(f"Scoring URI: {service.scoring_uri}")
   ```
 
----
 
-### **10. Test the Endpoint**
-- Once deployed, you can send HTTP requests to the endpoint to get predictions.
+
+## Step 10: Test the Endpoint
+
+> Once deployed, you can send HTTP requests to the endpoint to get predictions.
 
 
 

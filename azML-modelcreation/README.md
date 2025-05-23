@@ -265,7 +265,7 @@ def run(data):
 
 https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813
 
-> Create the Environment File (env.yml):
+> Create the Environment File (env.yaml):
 
 https://github.com/user-attachments/assets/8e7c37a2-e32b-4630-8516-f95926c374c0
 

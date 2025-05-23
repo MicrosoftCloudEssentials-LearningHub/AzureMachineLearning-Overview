@@ -73,7 +73,7 @@ https://github.com/user-attachments/assets/c199156f-96cf-4ed0-a8b5-c88db3e7a552
 2. Choose:
    - **Name**: `employee_data`
    - **Type**: Tabular
-   - **Browse** and upload the [sample_data.csv](./azML-modelcreation/data/sample_data.csv) file.
+   - **Browse** and upload the [sample_data.csv](./data/sample_data.csv) file.
 3. Click **Next**, then **Review + Create**.
 
 > Register the Dataset: 

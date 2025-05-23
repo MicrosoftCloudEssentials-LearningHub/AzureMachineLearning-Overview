@@ -242,28 +242,9 @@ https://github.com/user-attachments/assets/a82ff03e-437c-41bc-85fa-8b9903384a5b
 
 ## Step 9: Deploy the Model
 
-> Create the Scoring Script:
+> Create the scoring script as demonstrated in the video below. Click to see a more detailed [sample of the scoring file with debugs and logs included](./src/score.py)
 
-```python
-import joblib
-import numpy as np
-from azureml.core.model import Model
-
-def init():
-    global model
-    model_path = Model.get_model_path("my_model_RegressionModel")
-    model = joblib.load(model_path)
-
-def run(data):
-    try:
-        input_data = np.array(data["data"])
-        result = model.predict(input_data)
-        return result.tolist()
-    except Exception as e:
-        return str(e)
-```
-
-https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813
+  https://github.com/user-attachments/assets/cdc64857-3bde-4ec9-957d-5399d9447813
 
 > Create the Environment File (env.yaml):
 

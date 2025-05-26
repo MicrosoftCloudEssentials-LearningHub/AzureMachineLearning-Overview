@@ -26,6 +26,9 @@ Last updated: 2025-05-06
 - [Quickstart: Get started with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-azure-ml-in-a-day?view=azureml-api-2)
 - [Azure AI Foundry portal or Azure Machine Learning studio: Which experience should I choose?](https://learn.microsoft.com/en-us/ai/ai-studio-experiences-overview?toc=%2Fazure%2Fmachine-learning%2Ftoc.json&bc=%2Fazure%2Fmachine-learning%2Fbreadcrumb%2Ftoc.json&view=azureml-api-2)
 - [Using Azure Machine Learning (AML) for Medical Imaging Vision Model Training and Fine-tuning](https://techcommunity.microsoft.com/blog/machinelearningblog/using-azure-machine-learning-aml-for-medical-imaging-vision-model-training-and-f/4408743)
+- [Assign an Azure role for access to blob data](https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access?tabs=portal)
+- [Secure an Azure Machine Learning training environment with virtual networks](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-secure-training-vnet?view=azureml-api-2&tabs=cli%2Crequired#compute-instance)
+- [Deploy and score a machine learning model by using an online endpoint](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-deploy-online-endpoints?view=azureml-api-2&tabs=cli#understanding-service-state)
 
 </details>
 

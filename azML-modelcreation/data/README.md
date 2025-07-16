@@ -18,8 +18,9 @@ Last updated: 2025-04-29
 - **Department**: The department where the employee works (e.g., HR, Engineering, Sales).
 - **Salary**: The employee's annual salary in USD, ranging from \$40,000 to \$120,000.
 
-
+<!-- START BADGE -->
 <div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+  <img src="https://img.shields.io/badge/Total%20views-31-limegreen" alt="Total views">
+  <p>Refresh Date: 2025-07-16</p>
 </div>
+<!-- END BADGE -->

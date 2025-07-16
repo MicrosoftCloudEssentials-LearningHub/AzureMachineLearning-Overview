@@ -300,7 +300,7 @@ https://github.com/user-attachments/assets/1b3e5602-dc64-4c39-be72-ed1cbd74361e
 
 <!-- START BADGE -->
 <div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-31-limegreen" alt="Total views">
+  <img src="https://img.shields.io/badge/Total%20views-9-limegreen" alt="Total views">
   <p>Refresh Date: 2025-07-16</p>
 </div>
 <!-- END BADGE -->
